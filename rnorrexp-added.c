@@ -1,19 +1,17 @@
-static void PrintfZigguratMethodTable( const int i_max, const unsigned long *const k, const float *const f, const float *const w )
+static void FPrintfZigguratMethodTable( FILE *const fp, const int i_max, const unsigned long *const k, const float *const f, const float *const w )
 {
     for (int i = 0; i < i_max; i++)
     {
-        printf( "%5d%11lu%15.8e%15.8e\n", i, k[ i ], f[ i ], w[ i ] );
+        fprintf( fp, "%5d%11lu%15.8e%15.8e\n", i, k[ i ], f[ i ], w[ i ] );
     }
-
-    printf( "\n" );
 }
 
-void PrintfZigguratMethodTableExp(void)
+void FPrintfZigguratMethodTableExp( FILE *const fp )
 {
-    PrintfZigguratMethodTable( 256, ke, fe, we );
+    FPrintfZigguratMethodTable( fp, 256, ke, fe, we );
 }
 
-void PrintfZigguratMethodTableNor(void)
+void FPrintfZigguratMethodTableNor( FILE *const fp )
 {
-    PrintfZigguratMethodTable( 128, kn, fn, wn );
+    FPrintfZigguratMethodTable( fp, 128, kn, fn, wn );
 }

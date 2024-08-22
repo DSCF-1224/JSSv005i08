@@ -17,4 +17,5 @@ clean:
 	rm *.o $(PROGRAM)
 
 run:
-	./$(PROGRAM).exe >./result.txt
+	rm *.txt
+	./$(PROGRAM).exe
